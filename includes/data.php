@@ -208,8 +208,8 @@ function webinars(): array
 function faculty_directory(): array
 {
     return [
-        'khaled-habaybah'   => ['name' => 'Khaled Habaybah',     'role' => 'Faculty',  'bio' => 'Hemophilia care specialist contributing across the patient and nurse sessions.'],
-        'khaled-qawasmeh'   => ['name' => 'Khaled Qawasmeh',     'role' => 'Faculty',  'bio' => 'Focused on emerging treatments and non-factor therapy management.'],
+        'khaled-habaybah'   => ['name' => 'Khaled Habaybah',     'role' => 'Faculty',  'bio' => 'Hemophilia care specialist contributing across the patient and nurse sessions.', 'photo' => 'assets/img/speakers/Habaybah.jpg'],
+        'khaled-qawasmeh'   => ['name' => 'Khaled Qawasmeh',     'role' => 'Faculty',  'bio' => 'Focused on emerging treatments and non-factor therapy management.', 'photo' => 'assets/img/speakers/khalid.jpg'],
         'asma-al-olama'     => ['name' => 'Dr. Asma Al Olama',   'role' => 'Chair',    'bio' => 'Chairing the physician session and opening remarks.'],
         'mozah-al-marshoudi'=> ['name' => 'Dr. Mozah Al Marshoudi','role' => 'Faculty','bio' => 'Clinical landscape of hemophilia and emergency management.'],
         'sally-al-naeem'    => ['name' => 'Dr. Sally Al Naeem',  'role' => 'Faculty',  'bio' => 'Non-factor therapies and perioperative management.'],

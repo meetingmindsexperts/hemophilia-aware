@@ -14,10 +14,15 @@ $dir = faculty_directory();
     <?php foreach ($w['faculty'] as $id):
       $f = $dir[$id] ?? null; if (!$f) continue; ?>
     <article class="flex gap-4 rounded-2xl bg-white ring-1 ring-navy/10 p-6 shadow-sm">
+      <?php if (!empty($f['photo']) && is_file(dirname(__DIR__, 2) . '/' . $f['photo'])): ?>
+      <img src="<?= htmlspecialchars($f['photo']) ?>" alt="<?= htmlspecialchars($f['name']) ?>"
+           class="shrink-0 w-16 h-16 rounded-full object-cover ring-2 ring-gold/40" loading="lazy">
+      <?php else: ?>
       <div class="shrink-0 w-16 h-16 rounded-full grid place-items-center text-white font-bold text-lg shadow-inner"
            style="background: linear-gradient(135deg,#2E6F95,#1AA3A3);" aria-hidden="true">
         <?= htmlspecialchars(initials($f['name'])) ?>
       </div>
+      <?php endif; ?>
       <div class="min-w-0">
         <h3 class="font-bold text-navy text-lg leading-tight"><?= htmlspecialchars($f['name']) ?></h3>
         <p class="text-royal text-sm font-semibold"><?= htmlspecialchars($f['role']) ?></p>
