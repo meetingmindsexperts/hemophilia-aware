@@ -1,0 +1,75 @@
+name: Deploy Hemophilia Awareness Series
+
+# Deploys the PHP landing pages to shared hosting over FTP (port 21) on every
+# push to main. Only production files are uploaded — source creative packs,
+# screenshots, and zips never leave the repo.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'README.md'
+  workflow_dispatch: {} # manual "Run workflow" button in GitHub Actions
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true # a newer push supersedes an in-flight deploy
+
+jobs:
+  deploy:
+    name: Lint & deploy via FTP
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2' # match host PHP; built/tested on 8.4, works on 8.1+
+
+      - name: Lint all PHP files
+        run: |
+          set -e
+          find . -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: Smoke test (pages render, no warnings)
+        run: |
+          php -S 127.0.0.1:8080 >server.log 2>&1 &
+          sleep 2
+          for page in index.php patient.php nurses.php physician.php; do
+            STATUS=$(curl -s -o page.html -w "%{http_code}" "http://127.0.0.1:8080/$page")
+            test "$STATUS" = "200" || { echo "$page: expected 200, got $STATUS"; cat server.log; exit 1; }
+            grep -q "Hemophilia" page.html || { echo "$page: content missing"; exit 1; }
+            ! grep -qiE "warning|fatal error|parse error" page.html || { echo "$page: PHP warnings in output"; exit 1; }
+          done
+
+      - name: Deploy over FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}        # e.g. ftp.meetingmindsgroup.com
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp                            # plain FTP as requested
+          port: 21
+          # IMPORTANT: dedicated folder so this never overwrites another site
+          # that shares the same FTP credentials. Adjust to the real web path
+          # (e.g. public_html/hemophilia-aware/). Trailing slash required.
+          server-dir: hemophilia-aware/
+          # Upload only what production needs
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            frontend-design/**
+            Big Marker assest/**
+            **/*.zip
+            **/*.jpeg
+            .playwright-mcp/**
+            .DS_Store
+            **/.DS_Store
+            README.md
+            server.log
+            page.html
