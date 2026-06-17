@@ -62,7 +62,7 @@ function value_props(bool $cme = true): array
             ? ['CME Accredited',          'Earn credit toward your professional development.', 'badge']
             : ['Endorsed by ESH &amp; EOHNS', 'Backed by the region&rsquo;s haematology societies.', 'badge'],
         ['Audience-Specific',   'Tailored content for your role and needs.', 'target'],
-        ['Free &amp; Fully Virtual', 'Join live from anywhere — no cost to attend.', 'globe'],
+        ['Free &amp; Fully Virtual', 'Join live from anywhere, no cost to attend.', 'globe'],
     ];
 }
 
@@ -82,10 +82,10 @@ function webinars(): array
             'audience'    => 'Patients & Caregivers',
             'cme'         => false,
             'series_tag'  => 'Patient Awareness Webinar',
-            'logo'        => 'assets/img/logo-hemophilia.jpg', // "A New Era of Care" logo (patient only)
+            'logo'        => 'assets/img/logo-patient.png', // "A New Era of Care" logo (patient only)
             'title'       => 'Hemophilia:',
             'title_accent'=> 'A New Era of Care',
-            'lede'        => 'A patient-focused session on what modern hemophilia care means for everyday life — from preventing bleeds to living fully, wherever you are on your journey.',
+            'lede'        => 'A patient-focused session on what modern hemophilia care means for everyday life, from preventing bleeds to living fully, wherever you are on your journey.',
             'date_iso'    => '2026-07-03',
             'start_iso'   => '2026-07-03T19:30:00+04:00',
             'date_human'  => '3 July 2026',
@@ -108,8 +108,8 @@ function webinars(): array
             ],
             'agenda'      => [
                 ['07:30', '07:35', 'Opening Remarks', '', ['Khaled Habaybah']],
-                ['07:35', '07:55', 'Living with Hemophilia — Where Are We Today', 'Understanding the current gaps in care and what true protection means.', ['Khaled Habaybah']],
-                ['07:55', '08:20', 'Redefining Protection', 'From treating bleeds to preventing them — how the goals of hemophilia care have evolved.', ['Khaled Habaybah', 'Khaled Qawasmeh']],
+                ['07:35', '07:55', 'Living with Hemophilia, Where Are We Today', 'Understanding the current gaps in care and what true protection means.', ['Khaled Habaybah']],
+                ['07:55', '08:20', 'Redefining Protection', 'From treating bleeds to preventing them, how the goals of hemophilia care have evolved.', ['Khaled Habaybah', 'Khaled Qawasmeh']],
                 ['08:20', '08:45', 'Beyond Factor Therapy', 'Emerging treatment approaches and what they mean for patients with all types of hemophilia.', ['Khaled Qawasmeh']],
                 ['08:45', '09:10', 'What Modern Treatment Means for My Life', 'Adherence, lifestyle, travel, and shared decision-making with your care team.', ['All Faculty']],
                 ['09:10', '09:30', 'Panel Discussion & Q&A', '', ['All Faculty']],
@@ -123,7 +123,7 @@ function webinars(): array
             'host_org'    => 'EOHNS',
             'audience'    => 'Nurses',
             'cme'         => true,
-            'series_tag'  => 'Hemophilia Awareness Series — Wave 1',
+            'series_tag'  => 'Hemophilia Awareness Series, Wave 1',
             'logo'        => 'assets/img/logo-series.png', // shared "Awareness Series" logo (nurses + physician)
             'title'       => 'Hemophilia',
             'title_accent'=> 'Awareness Series',
@@ -143,7 +143,7 @@ function webinars(): array
                 'conference_url' => null,
             ],
             'highlights'  => [
-                ['Hemophilia today', 'Setting the balance in hemostasis — the foundation every nurse needs.'],
+                ['Hemophilia today', 'Setting the balance in hemostasis, the foundation every nurse needs.'],
                 ['Emerging treatments', 'Mechanisms of action and the clinical data behind non-factor therapies.'],
                 ['Managing patients on non-factors', 'Practical considerations for day-to-day patient management.'],
                 ['Counseling scenarios', 'An interactive activity working through real patient counseling situations.'],
@@ -165,7 +165,7 @@ function webinars(): array
             'host_org'    => 'ESH',
             'audience'    => 'Physicians & HCPs',
             'cme'         => true,
-            'series_tag'  => 'Hemophilia Awareness Series — Wave 2',
+            'series_tag'  => 'Hemophilia Awareness Series, Wave 2',
             'logo'        => 'assets/img/logo-series.png', // shared "Awareness Series" logo (nurses + physician)
             'title'       => 'Hemophilia',
             'title_accent'=> 'Awareness Series',
@@ -210,9 +210,9 @@ function faculty_directory(): array
     return [
         'khaled-habaybah'   => ['name' => 'Khaled Habaybah',     'role' => 'Faculty',  'bio' => 'Hemophilia care specialist contributing across the patient and nurse sessions.', 'photo' => 'assets/img/speakers/Habaybah.jpg'],
         'khaled-qawasmeh'   => ['name' => 'Khaled Qawasmeh',     'role' => 'Faculty',  'bio' => 'Focused on emerging treatments and non-factor therapy management.', 'photo' => 'assets/img/speakers/khalid.jpg'],
-        'asma-al-olama'     => ['name' => 'Dr. Asma Al Olama',   'role' => 'Chair',    'bio' => 'Chairing the physician session and opening remarks.'],
-        'mozah-al-marshoudi'=> ['name' => 'Dr. Mozah Al Marshoudi','role' => 'Faculty','bio' => 'Clinical landscape of hemophilia and emergency management.'],
-        'sally-al-naeem'    => ['name' => 'Dr. Sally Al Naeem',  'role' => 'Faculty',  'bio' => 'Non-factor therapies and perioperative management.'],
+        'asma-al-olama'     => ['name' => 'Dr. Asma Al Olama',   'role' => 'Chair',    'bio' => 'Chairing the physician session and opening remarks.', 'photo' => 'assets/img/speakers/asma.jpg'],
+        'mozah-al-marshoudi'=> ['name' => 'Dr. Mozah Al Marshoudi','role' => 'Faculty','bio' => 'Clinical landscape of hemophilia and emergency management.', 'photo' => 'assets/img/speakers/mozah.jpg'],
+        'sally-al-naeem'    => ['name' => 'Dr. Sally Al Naeem',  'role' => 'Faculty',  'bio' => 'Non-factor therapies and perioperative management.', 'photo' => 'assets/img/speakers/sally.jpg'],
     ];
 }
 
@@ -274,7 +274,7 @@ function event_schema(array $w, string $base): array
     return array_filter([
         '@context'            => 'https://schema.org',
         '@type'               => 'Event',
-        'name'                => trim($w['title'] . ' ' . $w['title_accent']) . ' — ' . $w['audience'],
+        'name'                => trim($w['title'] . ' ' . $w['title_accent']) . ', ' . $w['audience'],
         'description'         => $w['lede'],
         'startDate'           => $w['start_iso'],
         'endDate'             => $end,
