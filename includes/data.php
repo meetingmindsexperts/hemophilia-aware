@@ -82,6 +82,7 @@ function webinars(): array
             'audience'    => 'Patients & Caregivers',
             'cme'         => false,
             'series_tag'  => 'Patient Awareness Webinar',
+            'logo'        => 'assets/img/logo-hemophilia.jpg', // "A New Era of Care" logo (patient only)
             'title'       => 'Hemophilia:',
             'title_accent'=> 'A New Era of Care',
             'lede'        => 'A patient-focused session on what modern hemophilia care means for everyday life — from preventing bleeds to living fully, wherever you are on your journey.',
@@ -123,6 +124,7 @@ function webinars(): array
             'audience'    => 'Nurses',
             'cme'         => true,
             'series_tag'  => 'Hemophilia Awareness Series — Wave 1',
+            'logo'        => 'assets/img/logo-series.png', // shared "Awareness Series" logo (nurses + physician)
             'title'       => 'Hemophilia',
             'title_accent'=> 'Awareness Series',
             'lede'        => 'A practical session for nurses on the shifting balance of hemostasis, emerging non-factor therapies, and confident, scenario-based patient counseling.',
@@ -164,6 +166,7 @@ function webinars(): array
             'audience'    => 'Physicians & HCPs',
             'cme'         => true,
             'series_tag'  => 'Hemophilia Awareness Series — Wave 2',
+            'logo'        => 'assets/img/logo-series.png', // shared "Awareness Series" logo (nurses + physician)
             'title'       => 'Hemophilia',
             'title_accent'=> 'Awareness Series',
             'lede'        => 'A clinical deep-dive for physicians: the evolving hemophilia landscape, the era of non-factor therapies, emergencies, and perioperative management.',
@@ -224,6 +227,19 @@ function register_url(array $w): ?string
 {
     $u = $w['bigmarker']['conference_url'] ?? null;
     return $u ?: null;
+}
+
+/** Per-webinar event logo path if the file exists on disk, else null. */
+function webinar_logo(array $w): ?string
+{
+    $f = $w['logo'] ?? null;
+    return ($f && is_file(dirname(__DIR__) . '/' . ltrim($f, '/'))) ? $f : null;
+}
+
+/** Logo to display: the event logo if present, else the generic arc mark. */
+function webinar_logo_src(array $w): string
+{
+    return webinar_logo($w) ?? 'assets/img/logo-icon.png';
 }
 
 /** Absolute base URL of the current request (scheme + host), no trailing slash. */

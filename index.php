@@ -80,6 +80,11 @@ $cardLink = ['patient' => '/patient', 'nurses' => '/nurses', 'physician' => '/ph
        class="group flex flex-col rounded-2xl bg-white ring-1 ring-navy/10 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 overflow-hidden">
       <div class="h-2 bg-gradient-to-r from-royal via-teal to-gold"></div>
       <div class="p-7 flex flex-col flex-1">
+        <div class="mb-4 h-12 flex items-center">
+          <img src="<?= htmlspecialchars(webinar_logo_src($item)) ?>"
+               alt="<?= htmlspecialchars(trim($item['title'] . ' ' . $item['title_accent'])) ?> logo"
+               class="h-12 w-auto max-w-[170px] object-contain">
+        </div>
         <div class="flex items-center justify-between gap-2">
           <span class="rounded-full bg-royal/10 text-royal text-xs font-bold px-3 py-1"><?= htmlspecialchars($item['audience']) ?></span>
           <span class="flex items-center gap-1.5">

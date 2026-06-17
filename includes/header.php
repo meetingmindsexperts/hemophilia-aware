@@ -12,13 +12,17 @@ $regAttrs = $reg ? ' target="_blank" rel="noopener"' : '';
 
 <header class="sticky top-0 z-40 bg-ivory/85 backdrop-blur-md border-b border-navy/10">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4" aria-label="Primary">
+    <?php $hasCustomLogo = webinar_logo($w) !== null; ?>
     <a href="/" class="flex items-center gap-3 group min-w-0">
-      <img src="assets/img/logo-icon.png" alt="Hemophilia Awareness Series" class="w-11 h-9 object-contain shrink-0">
-
+      <img src="<?= htmlspecialchars(webinar_logo_src($w)) ?>"
+           alt="<?= htmlspecialchars(trim($w['title'] . ' ' . $w['title_accent'])) ?>"
+           class="h-9 sm:h-10 w-auto max-w-[150px] sm:max-w-[200px] object-contain shrink-0">
+      <?php if (!$hasCustomLogo): ?>
       <span class="leading-tight min-w-0">
         <span class="block text-navy font-extrabold text-sm sm:text-base truncate">Hemophilia Awareness</span>
         <span class="block text-royal text-[11px] sm:text-xs font-medium truncate"><?= htmlspecialchars($org['short']) ?> Webinar Series</span>
       </span>
+      <?php endif; ?>
     </a>
 
     <div class="hidden md:flex items-center gap-6 text-sm font-medium text-navy/80">
