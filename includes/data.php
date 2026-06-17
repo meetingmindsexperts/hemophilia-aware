@@ -31,12 +31,12 @@ const ORGS = [
  * Placeholders — confirm the real support inbox & number before launch.
  */
 const CONTACT = [
-    'email'       => 'info@meetingmindsgroup.com',
-    'phone'       => '+971 4 575 7641',
-    'phone_human' => '+971 4 575 7641',
-    'phone_hours' => 'Sun – Thu, 9:00 AM – 6:00 PM (GST)',
+    'email'       => 'virtual@meetingmindsexperts.com',
+    'phone'       => '+971 4 276 1444',
+    'phone_human' => '+971 4 276 1444',
+    'phone_hours' => 'Available Mon – Fri, 9:00 AM – 6:00 PM',
     'subscribe'   => 'https://meetingmindsgroup.us10.list-manage.com/subscribe?u=47d2f8c99b0099ed1b863db29&id=20983732e8',
-    'website'     => 'https://www.meetingmindsgroup.com',
+    'website'     => 'https://www.meetingmindsexperts.com',
 ];
 
 /**
