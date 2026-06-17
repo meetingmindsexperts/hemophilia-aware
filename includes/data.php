@@ -59,7 +59,7 @@ function value_props(bool $cme = true): array
     return [
         ['Expert UAE Faculty',  'Led by regional hematology specialists.', 'users'],
         $cme
-            ? ['CME Accredited',          'Earn credit toward your professional development.', 'badge']
+            ? ['CME Accredited',          'Earn credits toward your professional development.', 'badge']
             : ['Endorsed by ESH &amp; EOHNS', 'Backed by the region&rsquo;s haematology societies.', 'badge'],
         ['Audience-Specific',   'Tailored content for your role and needs.', 'target'],
         ['Free &amp; Fully Virtual', 'Join live from anywhere, no cost to attend.', 'globe'],
@@ -163,7 +163,7 @@ function webinars(): array
         'physician' => [
             'slug'        => 'physician',
             'host_org'    => 'ESH',
-            'audience'    => 'Physicians & HCPs',
+            'audience'    => 'Physician & HCPs',
             'cme'         => true,
             'series_tag'  => 'Hemophilia Awareness Series',
             'logo'        => 'assets/img/logo-series.png', // shared "Awareness Series" logo (nurses + physician)

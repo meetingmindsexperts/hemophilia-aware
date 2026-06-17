@@ -10,7 +10,7 @@ $faculty   = count(faculty_directory());
 
 $stats = [
     [(string) $sessions,  'Audience-specific sessions', 'Tailored for patients, nurses &amp; physicians'],
-    [(string) $cmeCount,  'CME-accredited sessions',    'Credit for the HCP webinars'],
+    [(string) $cmeCount,  'CME-accredited sessions',    'Credits for the HCP webinars'],
     [(string) $faculty,   'Expert faculty',             'Regional haematology specialists'],
     ['100%',              'Virtual &amp; free',          'Join live from anywhere'],
 ];

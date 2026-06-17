@@ -17,7 +17,7 @@ $c = CONTACT;
           </span>
           <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold">Need assistance?</h2>
           <p class="mt-3 text-ivory/75 leading-relaxed max-w-sm">
-            Questions about registration, your joining link<?= $w['cme'] ? ', or CME credit' : '' ?>? The Meeting Minds team is happy to help you take part in the <?= htmlspecialchars($w['audience']) ?> session.
+            Questions about registration, your joining link<?= $w['cme'] ? ', or CME credits' : '' ?>? The Meeting Minds team is happy to help you take part in the <?= htmlspecialchars($w['audience']) ?> session.
           </p>
         </div>
       </div>
@@ -73,7 +73,7 @@ $c = CONTACT;
             <div class="min-w-0">
               <p class="text-xs font-semibold uppercase tracking-wide text-charcoal/50">Joining the webinar</p>
               <p class="font-bold text-navy">Link sent before the session</p>
-              <p class="text-xs text-charcoal/60 mt-0.5">Registered attendees receive the BigMarker link by email.</p>
+              <p class="text-xs text-charcoal/60 mt-0.5">Registered attendees receive the BigMarker link by email</p>
             </div>
           </div>
 
