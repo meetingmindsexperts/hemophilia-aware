@@ -98,7 +98,7 @@ function webinars(): array
             'banner'      => 'assets/img/banner-patient.jpg',
             'keyvisual'   => 'assets/img/keyvisual-patient.jpg',
             'bigmarker'   => [
-                'conference_url' => null, // e.g. https://www.bigmarker.com/eohns/hemophilia-patient
+                'conference_url' => 'https://www.bigmarker.com/medulive/hemophilia-a-new-era-of-care?show_live_page=true',
             ],
             'highlights'  => [
                 ['Understand where care stands today', 'See the current gaps in hemophilia care and what genuine, lasting protection really means.'],
