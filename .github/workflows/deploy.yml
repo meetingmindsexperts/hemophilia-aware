@@ -57,7 +57,7 @@ jobs:
           # IMPORTANT: dedicated folder so this never overwrites another site
           # that shares the same FTP credentials. Adjust to the real web path
           # (e.g. public_html/hemophilia-aware/). Trailing slash required.
-          server-dir: hemophilia-aware/
+          server-dir: /
           # Upload only what production needs
           exclude: |
             **/.git*
