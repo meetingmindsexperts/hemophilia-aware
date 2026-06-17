@@ -24,7 +24,7 @@ $c = CONTACT;
       <div class="flex flex-col items-center gap-3">
         <span class="text-[11px] tracking-[0.18em] uppercase text-ivory/50">Supported by</span>
         <div class="h-24 w-full rounded-xl bg-white ring-1 ring-ivory/15 px-6 flex items-center justify-center">
-          <?= logo_tag('assets/img/sanofi-logo.png', 'Sanofi', 'sanofi', 'max-h-10 w-auto', 'font-extrabold text-navy lowercase text-3xl tracking-tight') ?>
+          <?= logo_tag('assets/img/sanofi-logo.png', 'Sanofi', 'sanofi', 'max-h-12 w-auto', 'font-extrabold text-navy lowercase text-3xl tracking-tight') ?>
         </div>
       </div>
 
