@@ -29,10 +29,7 @@ $cardLink = ['patient' => '/patient', 'nurses' => '/nurses', 'physician' => '/ph
 </header>
 
 <!-- Hero -->
-<section class="relative overflow-hidden bg-ivory">
-  <div class="pointer-events-none absolute -top-24 -left-24 w-80 h-80 rounded-full brand-arc opacity-90" aria-hidden="true"></div>
-  <div class="pointer-events-none absolute -top-16 -left-16 w-56 h-56 rounded-full bg-ivory" aria-hidden="true"></div>
-
+<section class="relative overflow-hidden bg-ivory bg-cover bg-no-repeat bg-bottom" style="background-image:url('/assets/img/hero-bg.jpg')">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-28 text-center">
     <div class="flex flex-wrap justify-center gap-2 mb-6 animate-fadeUp">
       <span class="rounded-full bg-navy text-ivory text-xs font-semibold px-3 py-1.5">Endorsed by ESH &amp; EOHNS</span>
@@ -52,13 +49,6 @@ $cardLink = ['patient' => '/patient', 'nurses' => '/nurses', 'physician' => '/ph
     </a>
   </div>
 
-  <div class="wave-band" aria-hidden="true">
-    <svg viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,96 C240,32 480,160 720,112 C960,64 1200,16 1440,80 L1440,160 L0,160 Z" fill="#9CC3E8" opacity="0.45"/>
-      <path d="M0,120 C260,64 520,168 760,124 C1000,80 1220,48 1440,104 L1440,160 L0,160 Z" fill="#2E6F95" opacity="0.6"/>
-      <path d="M0,140 C280,104 560,176 820,144 C1080,112 1260,96 1440,132 L1440,160 L0,160 Z" fill="#0B1F3A"/>
-    </svg>
-  </div>
 </section>
 
 <?php
