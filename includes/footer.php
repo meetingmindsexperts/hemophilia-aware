@@ -18,7 +18,6 @@ $c = CONTACT;
           <span class="h-12 w-px bg-navy/10" aria-hidden="true"></span>
           <?= logo_tag('assets/img/eohns.svg', 'Emirates Oncology & Hematology Nursing Society', 'EOHNS', 'max-h-16 w-auto', 'font-extrabold text-navy text-xl') ?>
         </div>
-        <span class="text-xs text-ivory/60 leading-snug text-center">Emirates Society of Haematology · Emirates Oncology &amp; Hematology Nursing Society</span>
       </div>
 
       <!-- Supported by: Sanofi -->
@@ -27,7 +26,6 @@ $c = CONTACT;
         <div class="h-24 w-full rounded-xl bg-white ring-1 ring-ivory/15 px-6 flex items-center justify-center">
           <?= logo_tag('assets/img/sanofi-logo.png', 'Sanofi', 'sanofi', 'max-h-10 w-auto', 'font-extrabold text-navy lowercase text-3xl tracking-tight') ?>
         </div>
-        <span class="text-xs text-ivory/60 leading-snug">Educational Sponsor</span>
       </div>
 
       <!-- Managed by: Meeting Minds -->
@@ -36,7 +34,6 @@ $c = CONTACT;
         <div class="h-24 w-full rounded-xl bg-white ring-1 ring-ivory/15 px-6 flex items-center justify-center">
           <?= logo_tag('assets/img/mme-logo.svg', 'Meeting Minds Experts', 'Meeting Minds Experts', 'max-h-16 w-auto', 'font-semibold text-navy text-sm text-center leading-tight') ?>
         </div>
-        <span class="text-xs text-ivory/60 leading-snug">Event Management</span>
       </div>
     </div>
 
@@ -60,7 +57,6 @@ $c = CONTACT;
       <p>&copy; <?= date('Y') ?> Hemophilia Awareness Series. Hosted under the <?= htmlspecialchars($org['short']) ?> website.</p>
       <p class="flex items-center gap-4">
         <a href="<?= htmlspecialchars($c['subscribe']) ?>" target="_blank" rel="noopener" class="hover:text-ivory transition-colors">Subscribe</a>
-        <a href="https://www.meetingmindsgroup.com" class="hover:text-ivory transition-colors">meetingmindsgroup.com</a>
         <a href="index.php" class="hover:text-ivory transition-colors">All Sessions</a>
       </p>
     </div>
