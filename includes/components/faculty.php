@@ -7,7 +7,6 @@ $dir = faculty_directory();
   <div class="max-w-2xl mb-12">
     <p class="text-royal font-semibold uppercase tracking-wide text-sm">Faculty</p>
     <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-navy">Meet your speakers</h2>
-    <p class="mt-3 text-charcoal/70">Full biographies and photographs will be added as faculty confirm their details.</p>
   </div>
 
   <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
