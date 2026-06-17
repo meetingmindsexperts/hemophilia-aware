@@ -54,7 +54,7 @@ $c = CONTACT;
     <hr class="my-10 border-ivory/15">
 
     <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ivory/60">
-      <p>&copy; <?= date('Y') ?> Hemophilia Awareness Series. Hosted under the <?= htmlspecialchars($org['short']) ?> website.</p>
+      <p>&copy; <?= date('Y') ?> Hemophilia Awareness Series. Managed by Meeting Minds Experts.</p>
       <p class="flex items-center gap-4">
         <a href="<?= htmlspecialchars($c['subscribe']) ?>" target="_blank" rel="noopener" class="hover:text-ivory transition-colors">Subscribe</a>
         <a href="/" class="hover:text-ivory transition-colors">All Sessions</a>
