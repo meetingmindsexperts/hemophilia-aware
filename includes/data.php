@@ -123,7 +123,7 @@ function webinars(): array
             'host_org'    => 'EOHNS',
             'audience'    => 'Nurses',
             'cme'         => true,
-            'series_tag'  => 'Hemophilia Awareness Series, Wave 1',
+            'series_tag'  => 'Hemophilia Awareness Series',
             'logo'        => 'assets/img/logo-series.png', // shared "Awareness Series" logo (nurses + physician)
             'title'       => 'Hemophilia',
             'title_accent'=> 'Awareness Series',
@@ -165,7 +165,7 @@ function webinars(): array
             'host_org'    => 'ESH',
             'audience'    => 'Physicians & HCPs',
             'cme'         => true,
-            'series_tag'  => 'Hemophilia Awareness Series, Wave 2',
+            'series_tag'  => 'Hemophilia Awareness Series',
             'logo'        => 'assets/img/logo-series.png', // shared "Awareness Series" logo (nurses + physician)
             'title'       => 'Hemophilia',
             'title_accent'=> 'Awareness Series',

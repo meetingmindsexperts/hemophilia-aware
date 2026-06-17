@@ -6,7 +6,7 @@ declare(strict_types=1);
   <div class="max-w-2xl">
     <p class="text-royal font-semibold uppercase tracking-wide text-sm">What you'll take away</p>
     <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-navy text-balance">Built for <?= htmlspecialchars(strtolower($w['audience'])) ?>, grounded in today's care</h2>
-    <p class="mt-4 text-lg text-charcoal/75 leading-relaxed">This session is part of an educational webinar series on the evolving landscape of hemophilia care — emerging treatments, patient management, and practical clinical considerations.</p>
+    <p class="mt-4 text-lg text-charcoal/75 leading-relaxed">This session is part of an educational webinar series on the evolving landscape of hemophilia care, emerging treatments, patient management, and practical clinical considerations.</p>
   </div>
 
   <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

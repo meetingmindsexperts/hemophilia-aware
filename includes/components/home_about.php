@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 $themes = [
-    ['Evolving landscape of care', 'How the goals of hemophilia care are shifting — from treating bleeds to preventing them.',
+    ['Evolving landscape of care', 'How the goals of hemophilia care are shifting, from treating bleeds to preventing them.',
      '<path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Z"/><path d="M3 12h4l2 5 4-10 2 5h4"/>'],
     ['Emerging treatments', 'A clear look at new approaches, including non-factor therapies, across all types of hemophilia.',
      '<path d="M8.5 3h7M10 3v5.5L5.5 17a3 3 0 0 0 2.7 4.3h7.6A3 3 0 0 0 18.5 17L14 8.5V3"/><path d="M7 14h10"/>'],
-    ['Patient management', 'Practical, day-to-day management — adherence, lifestyle, counseling and shared decisions.',
+    ['Patient management', 'Practical, day-to-day management, adherence, lifestyle, counseling and shared decisions.',
      '<path d="M16 11.5a4 4 0 1 0-8 0M4 20.5a8 8 0 0 1 16 0"/>'],
     ['Clinical considerations', 'Real-world clinical detail: emergencies, perioperative care and case-based learning.',
      '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M12 5v6M8.5 15.5h7"/>'],
@@ -21,7 +21,7 @@ $themes = [
       <p class="text-royal font-semibold uppercase tracking-wide text-sm">About the series</p>
       <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-navy text-balance">Raising awareness across the hemophilia care community</h2>
       <p class="mt-4 text-lg text-charcoal/75 leading-relaxed">
-        The Hemophilia Awareness Series brings patients, nurses and physicians together around the evolving landscape of hemophilia care — emerging treatment approaches, patient management, and practical clinical considerations.
+        The Hemophilia Awareness Series brings patients, nurses and physicians together around the evolving landscape of hemophilia care, emerging treatment approaches, patient management, and practical clinical considerations.
       </p>
 
       <!-- Trust line -->

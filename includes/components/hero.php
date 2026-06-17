@@ -90,7 +90,7 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
             <?php endif; ?>
             <p class="mt-2.5 flex items-center justify-center gap-1.5 text-center text-xs text-charcoal/55">
               <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-              <?= $bmUrl ? 'Secure registration on BigMarker — opens in a new tab.' : 'Registration will open on BigMarker shortly.' ?>
+              <?= $bmUrl ? 'Secure registration on BigMarker, opens in a new tab.' : 'Registration will open on BigMarker shortly.' ?>
             </p>
 
             <ul class="mt-5 space-y-2.5 text-sm text-charcoal/80">

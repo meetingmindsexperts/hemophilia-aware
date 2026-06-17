@@ -44,7 +44,7 @@ $cardLink = ['patient' => '/patient', 'nurses' => '/nurses', 'physician' => '/ph
       <span class="block text-royal">Webinar Series</span>
     </h1>
     <p class="mt-6 max-w-2xl mx-auto text-lg text-charcoal/75 leading-relaxed">
-      An educational webinar series raising awareness of hemophilia care across dedicated, audience-specific virtual sessions — for patients, nurses, and physicians.
+      An educational webinar series raising awareness of hemophilia care across dedicated, audience-specific virtual sessions, for patients, nurses, and physicians.
     </p>
     <a href="#sessions" class="mt-8 inline-flex items-center gap-2 rounded-full bg-royal text-white font-bold px-8 py-4 shadow-lg hover:bg-navy transition-colors min-h-[44px]">
       Choose your session

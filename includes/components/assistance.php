@@ -3,7 +3,7 @@
 declare(strict_types=1);
 $c = CONTACT;
 ?>
-<section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-20">
+<section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-20">
   <div class="rounded-3xl bg-white ring-1 ring-navy/10 shadow-sm overflow-hidden">
     <div class="grid lg:grid-cols-[0.9fr_1.1fr]">
 
@@ -27,7 +27,7 @@ $c = CONTACT;
         <div class="grid sm:grid-cols-2 gap-4">
 
           <!-- Email -->
-          <a href="mailto:<?= htmlspecialchars($c['email']) ?>?subject=<?= rawurlencode('Hemophilia Awareness Webinar — Assistance') ?>"
+          <a href="mailto:<?= htmlspecialchars($c['email']) ?>?subject=<?= rawurlencode('Hemophilia Awareness Webinar, Assistance') ?>"
              class="group flex items-start gap-4 rounded-2xl ring-1 ring-navy/10 p-5 hover:ring-royal hover:bg-ivory/50 transition-all">
             <span class="grid place-items-center w-11 h-11 rounded-xl bg-royal/10 text-royal shrink-0" aria-hidden="true">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
