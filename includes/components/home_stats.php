@@ -2,9 +2,10 @@
 /** components/home_stats.php — at-a-glance metrics band for the series (home only). */
 declare(strict_types=1);
 
-$all       = webinars();
-$sessions  = count($all);
-$cmeCount  = count(array_filter($all, fn($x) => !empty($x['cme'])));
+// Use a local name — do NOT reuse $all, which the home page relies on (sorted by date).
+$statsWebinars = webinars();
+$sessions  = count($statsWebinars);
+$cmeCount  = count(array_filter($statsWebinars, fn($x) => !empty($x['cme'])));
 $faculty   = count(faculty_directory());
 
 $stats = [
