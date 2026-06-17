@@ -3,9 +3,9 @@
 declare(strict_types=1);
 $c = CONTACT;
 ?>
-<section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-20">
+<section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-20">
   <div class="rounded-3xl bg-white ring-1 ring-navy/10 shadow-sm overflow-hidden">
-    <div class="grid lg:grid-cols-[0.9fr_1.1fr]">
+    <div class="grid lg:grid-cols-[0.7fr_1.3fr]">
 
       <!-- Intro -->
       <div class="bg-navy text-ivory p-8 sm:p-10 flex flex-col justify-center relative overflow-hidden">
