@@ -7,6 +7,7 @@ $all = webinars();
 uasort($all, fn($a, $b) => strcmp($a['date_iso'], $b['date_iso'])); // soonest first → physician leads
 $w = $all['patient']; // drives <head> defaults
 $page_title = 'Hemophilia Awareness Webinar Series';
+$is_series  = true; // emit ItemList structured data instead of a single Event
 
 require __DIR__ . '/includes/head.php';
 

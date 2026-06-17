@@ -8,22 +8,60 @@ declare(strict_types=1);
 $pageTitle = $page_title
     ?? trim(($w['title'] ?? 'Hemophilia') . ' ' . ($w['title_accent'] ?? 'Awareness Series'));
 $metaDesc = $w['lede'] ?? 'An educational webinar series raising awareness and understanding of hemophilia care.';
+
+$isSeries  = !empty($is_series);
+$base      = base_url();
+$canonical = $base . ($_SERVER['SCRIPT_NAME'] ?? '/');
+$fullTitle = $pageTitle . ' · Hemophilia Awareness Series';
+$ogImage   = $base . '/' . (($w['keyvisual'] ?? $w['banner']) ?? 'assets/img/keyvisual-patient.jpg');
+$siteName  = 'Hemophilia Awareness Series';
+
+// JSON-LD: a single Event per webinar page, or an ItemList of all on the index.
+if ($isSeries) {
+    $items = [];
+    $i = 0;
+    foreach (webinars() as $item) {
+        $items[] = ['@type' => 'ListItem', 'position' => ++$i, 'item' => event_schema($item, $base)];
+    }
+    $jsonLd = ['@context' => 'https://schema.org', '@type' => 'ItemList', 'itemListElement' => $items];
+} else {
+    $jsonLd = event_schema($w, $base);
+}
+$jsonLdOut = json_encode($jsonLd, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($pageTitle) ?> · Hemophilia Awareness Series</title>
+    <title><?= htmlspecialchars($fullTitle) ?></title>
     <meta name="description" content="<?= htmlspecialchars($metaDesc) ?>">
+    <meta name="keywords" content="hemophilia, hemophilia awareness, webinar, CME, ESH, EOHNS, Sanofi, haematology, UAE, non-factor therapy">
+    <meta name="author" content="Meeting Minds Experts">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0B1F3A">
+    <link rel="canonical" href="<?= htmlspecialchars($canonical) ?>">
+    <link rel="icon" type="image/png" href="assets/img/logo-icon.png">
+    <link rel="apple-touch-icon" href="assets/img/logo-icon.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="<?= htmlspecialchars($pageTitle) ?>">
+    <meta property="og:site_name" content="<?= htmlspecialchars($siteName) ?>">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="<?= htmlspecialchars($canonical) ?>">
+    <meta property="og:title" content="<?= htmlspecialchars($fullTitle) ?>">
     <meta property="og:description" content="<?= htmlspecialchars($metaDesc) ?>">
-    <?php if (!empty($w['banner'])): ?>
-    <meta property="og:image" content="<?= htmlspecialchars($w['banner']) ?>">
-    <?php endif; ?>
+    <meta property="og:image" content="<?= htmlspecialchars($ogImage) ?>">
+    <meta property="og:image:alt" content="<?= htmlspecialchars($pageTitle) ?>">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?= htmlspecialchars($fullTitle) ?>">
+    <meta name="twitter:description" content="<?= htmlspecialchars($metaDesc) ?>">
+    <meta name="twitter:image" content="<?= htmlspecialchars($ogImage) ?>">
+
+    <!-- Structured data -->
+    <script type="application/ld+json"><?= $jsonLdOut ?></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

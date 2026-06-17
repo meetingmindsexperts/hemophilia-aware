@@ -219,6 +219,61 @@ function get_webinar(string $slug): ?array
     return webinars()[$slug] ?? null;
 }
 
+/** Absolute base URL of the current request (scheme + host), no trailing slash. */
+function base_url(): string
+{
+    $https  = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+            || (($_SERVER['SERVER_PORT'] ?? '') === '443')
+            || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+    return ($https ? 'https' : 'http') . '://' . $host;
+}
+
+/** schema.org Event JSON-LD for a webinar (Google Event rich results). */
+function event_schema(array $w, string $base): array
+{
+    try {
+        $end = (new DateTimeImmutable($w['start_iso']))->modify('+2 hours')->format('c');
+    } catch (Throwable $e) {
+        $end = $w['start_iso'];
+    }
+    $url = $base . '/' . $w['slug'] . '.php';
+    $img = $base . '/' . ($w['keyvisual'] ?? $w['banner'] ?? 'assets/img/keyvisual-patient.jpg');
+
+    $dir = faculty_directory();
+    $performers = [];
+    foreach ($w['faculty'] as $id) {
+        if (isset($dir[$id])) {
+            $performers[] = ['@type' => 'Person', 'name' => $dir[$id]['name']];
+        }
+    }
+
+    return array_filter([
+        '@context'            => 'https://schema.org',
+        '@type'               => 'Event',
+        'name'                => trim($w['title'] . ' ' . $w['title_accent']) . ' — ' . $w['audience'],
+        'description'         => $w['lede'],
+        'startDate'           => $w['start_iso'],
+        'endDate'             => $end,
+        'eventAttendanceMode' => 'https://schema.org/OnlineEventAttendanceMode',
+        'eventStatus'         => 'https://schema.org/EventScheduled',
+        'inLanguage'          => 'en',
+        'image'               => [$img],
+        'url'                 => $url,
+        'location'            => ['@type' => 'VirtualLocation', 'url' => $url],
+        'organizer'           => ['@type' => 'Organization', 'name' => 'Meeting Minds Experts'],
+        'sponsor'             => ['@type' => 'Organization', 'name' => 'Sanofi'],
+        'performer'           => $performers,
+        'offers'              => [
+            '@type'         => 'Offer',
+            'price'         => '0',
+            'priceCurrency' => 'AED',
+            'availability'  => 'https://schema.org/InStock',
+            'url'           => $url,
+        ],
+    ]);
+}
+
 /** Initials for a name, used in placeholder avatar circles. */
 function initials(string $name): string
 {
