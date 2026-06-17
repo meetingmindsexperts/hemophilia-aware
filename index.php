@@ -11,13 +11,13 @@ $is_series  = true; // emit ItemList structured data instead of a single Event
 
 require __DIR__ . '/includes/head.php';
 
-$cardLink = ['patient' => 'patient.php', 'nurses' => 'nurses.php', 'physician' => 'physician.php'];
+$cardLink = ['patient' => '/patient', 'nurses' => '/nurses', 'physician' => '/physician'];
 ?>
 <body class="font-sans text-charcoal antialiased">
 
 <header class="sticky top-0 z-40 bg-ivory/85 backdrop-blur-md border-b border-navy/10">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Primary">
-    <a href="index.php" class="flex items-center gap-3">
+    <a href="/" class="flex items-center gap-3">
       <img src="assets/img/logo-icon.png" alt="Hemophilia Awareness Series" class="w-11 h-9 object-contain">
       <span class="leading-tight">
         <span class="block text-navy font-extrabold text-sm sm:text-base">Hemophilia Awareness</span>
@@ -60,6 +60,11 @@ $cardLink = ['patient' => 'patient.php', 'nurses' => 'nurses.php', 'physician' =
     </svg>
   </div>
 </section>
+
+<?php
+  require __DIR__ . '/includes/components/home_stats.php';
+  require __DIR__ . '/includes/components/home_about.php';
+?>
 
 <!-- Sessions -->
 <section id="sessions" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-20">

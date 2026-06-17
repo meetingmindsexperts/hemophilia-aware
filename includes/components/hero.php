@@ -54,8 +54,9 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
         </dl>
 
         <!-- Dual CTAs -->
+        <?php $reg = register_url($w); $regHref = $reg ?: '#register'; $regAttrs = $reg ? ' target="_blank" rel="noopener"' : ''; ?>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#register" class="inline-flex items-center gap-2 rounded-full bg-royal text-white font-bold px-7 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
+          <a href="<?= htmlspecialchars($regHref) ?>"<?= $regAttrs ?> class="inline-flex items-center gap-2 rounded-full bg-royal text-white font-bold px-7 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
             Register now
             <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
           </a>
@@ -75,21 +76,21 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
 
           <div class="p-5 sm:p-6">
             <?php if ($bmUrl): ?>
-              <!-- BigMarker embedded registration -->
-              <iframe
-                title="Webinar registration"
-                src="<?= htmlspecialchars(rtrim($bmUrl, '/')) ?>/registrations/new?embed=true"
-                class="w-full rounded-lg border border-navy/10"
-                style="min-height: 540px;"
-                loading="lazy"></iframe>
+              <!-- Redirect to BigMarker registration (no embedded form) -->
+              <a href="<?= htmlspecialchars($bmUrl) ?>" target="_blank" rel="noopener"
+                 class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-royal text-white font-bold px-5 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
+                Register on BigMarker
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M14 5h5v5M19 5l-9 9M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>
+              </a>
+              <p class="mt-2 text-center text-xs text-charcoal/55">Opens our secure BigMarker registration page in a new tab.</p>
             <?php else: ?>
-              <!-- Fallback shown until the BigMarker conference URL is wired in data.php -->
+              <!-- Fallback shown until the BigMarker URL is wired in data.php -->
               <div class="rounded-xl border-2 border-dashed border-royal/30 bg-ivory/60 p-6 text-center">
                 <div class="mx-auto w-12 h-12 rounded-full bg-royal/10 grid place-items-center mb-3" aria-hidden="true">
                   <svg class="w-6 h-6 text-royal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 11.5a4 4 0 1 0-8 0M4 20.5a8 8 0 0 1 16 0"/></svg>
                 </div>
                 <p class="font-bold text-navy">Registration opening soon</p>
-                <p class="text-sm text-charcoal/70 mt-1 mb-5">The BigMarker registration form will appear here. Add the conference URL in <code class="text-xs bg-navy/5 px-1 rounded">includes/data.php</code>.</p>
+                <p class="text-sm text-charcoal/70 mt-1 mb-5">The BigMarker registration link will go live here. Add the URL in <code class="text-xs bg-navy/5 px-1 rounded">includes/data.php</code>.</p>
                 <button type="button" disabled
                   class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-royal/40 text-white font-semibold px-5 py-3 cursor-not-allowed min-h-[44px]">
                   Register on BigMarker

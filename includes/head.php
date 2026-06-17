@@ -11,7 +11,8 @@ $metaDesc = $w['lede'] ?? 'An educational webinar series raising awareness and u
 
 $isSeries  = !empty($is_series);
 $base      = base_url();
-$canonical = $base . ($_SERVER['SCRIPT_NAME'] ?? '/');
+$cleanPath = $isSeries ? '/' : '/' . ($w['slug'] ?? '');
+$canonical = $base . $cleanPath;
 $fullTitle = $pageTitle . ' · Hemophilia Awareness Series';
 $ogImage   = $base . '/' . (($w['keyvisual'] ?? $w['banner']) ?? 'assets/img/keyvisual-patient.jpg');
 $siteName  = 'Hemophilia Awareness Series';

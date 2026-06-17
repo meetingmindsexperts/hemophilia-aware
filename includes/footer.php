@@ -57,7 +57,7 @@ $c = CONTACT;
       <p>&copy; <?= date('Y') ?> Hemophilia Awareness Series. Hosted under the <?= htmlspecialchars($org['short']) ?> website.</p>
       <p class="flex items-center gap-4">
         <a href="<?= htmlspecialchars($c['subscribe']) ?>" target="_blank" rel="noopener" class="hover:text-ivory transition-colors">Subscribe</a>
-        <a href="index.php" class="hover:text-ivory transition-colors">All Sessions</a>
+        <a href="/" class="hover:text-ivory transition-colors">All Sessions</a>
       </p>
     </div>
   </div>

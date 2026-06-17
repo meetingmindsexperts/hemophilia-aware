@@ -25,7 +25,8 @@ declare(strict_types=1);
         <?php endforeach; ?>
       </div>
 
-      <a href="#register"
+      <?php $reg = register_url($w); $regHref = $reg ?: '#register'; $regAttrs = $reg ? ' target="_blank" rel="noopener"' : ''; ?>
+      <a href="<?= htmlspecialchars($regHref) ?>"<?= $regAttrs ?>
          class="mt-7 inline-flex items-center gap-2 rounded-full bg-gold text-navy font-bold px-8 py-4 shadow-lg hover:bg-gold-400 transition-colors min-h-[44px]">
         Register now
         <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>

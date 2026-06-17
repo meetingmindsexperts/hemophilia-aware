@@ -67,10 +67,10 @@ function value_props(bool $cme = true): array
 }
 
 /**
- * BigMarker registration.
- * Replace `conference_url` with the real BigMarker conference registration URL
- * for each webinar. The embedded iframe points at `…/registrations/new?embed=true`.
- * Leave as null to render the styled "registration opening soon" fallback.
+ * BigMarker registration (redirect model — no embedded form).
+ * Set `conference_url` to the public BigMarker registration page for each webinar.
+ * Every "Register" CTA links out to it (new tab). Leave null to show the styled
+ * "registration opening soon" fallback.
  */
 function webinars(): array
 {
@@ -217,6 +217,13 @@ function faculty_directory(): array
 function get_webinar(string $slug): ?array
 {
     return webinars()[$slug] ?? null;
+}
+
+/** The BigMarker registration URL to redirect to, or null if not yet configured. */
+function register_url(array $w): ?string
+{
+    $u = $w['bigmarker']['conference_url'] ?? null;
+    return $u ?: null;
 }
 
 /** Absolute base URL of the current request (scheme + host), no trailing slash. */

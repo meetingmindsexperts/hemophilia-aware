@@ -2,6 +2,9 @@
 /** header.php — sticky top navigation. Expects $w (current webinar). */
 declare(strict_types=1);
 $org = ORGS[$w['host_org']];
+$reg = register_url($w);
+$regHref  = $reg ?: '#register';
+$regAttrs = $reg ? ' target="_blank" rel="noopener"' : '';
 ?>
 <a href="#register" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
   Skip to registration
@@ -9,7 +12,7 @@ $org = ORGS[$w['host_org']];
 
 <header class="sticky top-0 z-40 bg-ivory/85 backdrop-blur-md border-b border-navy/10">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4" aria-label="Primary">
-    <a href="index.php" class="flex items-center gap-3 group min-w-0">
+    <a href="/" class="flex items-center gap-3 group min-w-0">
       <img src="assets/img/logo-icon.png" alt="Hemophilia Awareness Series" class="w-11 h-9 object-contain shrink-0">
 
       <span class="leading-tight min-w-0">
@@ -23,10 +26,10 @@ $org = ORGS[$w['host_org']];
       <a href="#agenda" class="hover:text-royal transition-colors">Agenda</a>
       <a href="#faculty" class="hover:text-royal transition-colors">Faculty</a>
       <a href="#contact" class="hover:text-royal transition-colors">Contact</a>
-      <a href="index.php" class="hover:text-royal transition-colors">All Sessions</a>
+      <a href="/" class="hover:text-royal transition-colors">All Sessions</a>
     </div>
 
-    <a href="#register"
+    <a href="<?= htmlspecialchars($regHref) ?>"<?= $regAttrs ?>
        class="inline-flex items-center gap-2 rounded-full bg-royal text-white text-sm font-semibold px-5 py-2.5 shadow-sm hover:bg-navy transition-colors min-h-[44px]">
       Register
       <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
