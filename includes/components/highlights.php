@@ -5,7 +5,7 @@ declare(strict_types=1);
 <section id="about" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-20">
   <div class="max-w-2xl">
     <p class="text-royal font-semibold uppercase tracking-wide text-sm">What you'll take away</p>
-    <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-navy text-balance">Built for <?= htmlspecialchars(strtolower($w['audience'])) ?>, grounded in today's care</h2>
+    <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-navy text-balance">Built for <?= htmlspecialchars(str_replace(' & ', ' and ', $w['audience'])) ?>, grounded in today's care</h2>
     <p class="mt-4 text-lg text-charcoal/75 leading-relaxed">This session is part of an educational webinar series on the evolving landscape of hemophilia care, emerging treatments, patient management, and practical clinical considerations.</p>
   </div>
 
