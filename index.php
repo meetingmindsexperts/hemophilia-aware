@@ -16,13 +16,9 @@ $cardLink = ['patient' => '/patient', 'nurses' => '/nurses', 'physician' => '/ph
 <body class="font-sans text-charcoal antialiased">
 
 <header class="sticky top-0 z-40 bg-ivory/85 backdrop-blur-md border-b border-navy/10">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Primary">
-    <a href="/" class="flex items-center gap-3">
-      <img src="assets/img/logo-icon.png" alt="Hemophilia Awareness Series" class="w-11 h-9 object-contain">
-      <span class="leading-tight">
-        <span class="block text-navy font-extrabold text-sm sm:text-base">Hemophilia Awareness</span>
-        <span class="block text-royal text-[11px] sm:text-xs font-medium">Webinar series</span>
-      </span>
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-28 flex items-center justify-between" aria-label="Primary">
+    <a href="/" class="flex items-center min-w-0">
+      <img src="/assets/img/logo-series.png" alt="Hemophilia Awareness Series" class="w-[150px] h-auto object-contain shrink-0">
     </a>
     <a href="#sessions" class="inline-flex items-center rounded-full bg-royal text-white text-sm font-semibold px-5 py-2.5 hover:bg-navy transition-colors min-h-[44px]">View sessions</a>
   </nav>
@@ -30,6 +26,7 @@ $cardLink = ['patient' => '/patient', 'nurses' => '/nurses', 'physician' => '/ph
 
 <!-- Hero -->
 <section class="relative overflow-hidden bg-ivory bg-cover bg-no-repeat bg-bottom" style="background-image:url('/assets/img/hero-bg.jpg')">
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-ivory via-ivory/75 to-transparent" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-28 text-center">
     <div class="flex flex-wrap justify-center gap-2 mb-6 animate-fadeUp">
       <span class="rounded-full bg-navy text-ivory text-xs font-semibold px-3 py-1.5">Endorsed by ESH &amp; EOHNS</span>
@@ -70,10 +67,10 @@ $cardLink = ['patient' => '/patient', 'nurses' => '/nurses', 'physician' => '/ph
        class="group flex flex-col rounded-2xl bg-white ring-1 ring-navy/10 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 overflow-hidden">
       <div class="h-2 bg-gradient-to-r from-royal via-teal to-gold"></div>
       <div class="p-7 flex flex-col flex-1">
-        <div class="mb-4 h-20 flex items-center">
+        <div class="mb-4 h-20 w-[200px]">
           <img src="<?= htmlspecialchars(webinar_logo_src($item)) ?>"
                alt="<?= htmlspecialchars(trim($item['title'] . ' ' . $item['title_accent'])) ?> logo"
-               class="h-20 w-auto max-w-[220px] object-contain">
+               class="h-full w-full object-contain object-left">
         </div>
         <div class="flex items-center justify-between gap-2">
           <span class="rounded-full bg-royal/10 text-royal text-xs font-bold px-3 py-1"><?= htmlspecialchars($item['audience']) ?></span>

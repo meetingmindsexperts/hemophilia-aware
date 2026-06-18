@@ -51,8 +51,8 @@ $jsonLdOut = json_encode($jsonLd, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICOD
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0B1F3A">
     <link rel="canonical" href="<?= htmlspecialchars($canonical) ?>">
-    <link rel="icon" type="image/png" href="assets/img/logo-icon.png">
-    <link rel="apple-touch-icon" href="assets/img/logo-icon.png">
+    <link rel="icon" type="image/png" href="/assets/img/logo-icon.png">
+    <link rel="apple-touch-icon" href="/assets/img/logo-icon.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">

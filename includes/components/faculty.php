@@ -15,7 +15,7 @@ $dir = faculty_directory();
     <article class="flex gap-4 rounded-2xl bg-white ring-1 ring-navy/10 p-6 shadow-sm">
       <?php if (!empty($f['photo']) && is_file(dirname(__DIR__, 2) . '/' . $f['photo'])): ?>
       <!-- Source images already include a gold ring on a white background; show them as-is, no extra clip/ring. -->
-      <img src="<?= htmlspecialchars($f['photo']) ?>" alt="<?= htmlspecialchars($f['name']) ?>"
+      <img src="/<?= htmlspecialchars(ltrim($f['photo'], '/')) ?>" alt="<?= htmlspecialchars($f['name']) ?>"
            class="shrink-0 w-24 h-24 sm:w-28 sm:h-28 object-contain" loading="lazy">
       <?php else: ?>
       <div class="shrink-0 w-24 h-24 sm:w-28 sm:h-28 rounded-full grid place-items-center text-white font-bold text-2xl shadow-inner ring-2 ring-gold/40"

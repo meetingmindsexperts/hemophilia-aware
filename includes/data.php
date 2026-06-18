@@ -50,7 +50,7 @@ function logo_tag(string $file, string $alt, string $fallback, string $imgClass 
 {
     $abs = dirname(__DIR__) . '/' . ltrim($file, '/');
     if (is_file($abs)) {
-        return '<img src="' . htmlspecialchars($file) . '" alt="' . htmlspecialchars($alt) . '" class="' . $imgClass . '" loading="lazy">';
+        return '<img src="/' . htmlspecialchars(ltrim($file, '/')) . '" alt="' . htmlspecialchars($alt) . '" class="' . $imgClass . '" loading="lazy">';
     }
     return '<span class="' . $fallbackClass . '">' . htmlspecialchars($fallback) . '</span>';
 }
@@ -244,7 +244,7 @@ function webinar_logo(array $w): ?string
 /** Logo to display: the event logo if present, else the generic arc mark. */
 function webinar_logo_src(array $w): string
 {
-    return webinar_logo($w) ?? 'assets/img/logo-icon.png';
+    return '/' . ltrim(webinar_logo($w) ?? 'assets/img/logo-icon.png', '/');
 }
 
 /** Absolute base URL of the current request (scheme + host), no trailing slash. */
