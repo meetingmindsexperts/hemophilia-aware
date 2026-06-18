@@ -54,13 +54,13 @@ function logo_tag(string $file, string $alt, string $fallback, string $imgClass 
 }
 
 /** Four quick value propositions shown under the hero (reference-site pattern). */
-function value_props(bool $cme = true): array
+function value_props(bool $cme = true, array $endorsers = ['ESH', 'EOHNS']): array
 {
     return [
         ['Expert UAE Faculty',  'Led by regional hematology specialists.', 'users'],
         $cme
             ? ['CME Accredited',          'Earn credits toward your professional development.', 'badge']
-            : ['Endorsed by ESH &amp; EOHNS', 'Backed by the region&rsquo;s haematology societies.', 'badge'],
+            : ['Endorsed by ' . implode(' &amp; ', $endorsers), 'Backed by the region&rsquo;s haematology societies.', 'badge'],
         ['Audience-Specific',   'Tailored content for your role and needs.', 'target'],
         ['Free &amp; Fully Virtual', 'Join live from anywhere, no cost to attend.', 'globe'],
     ];
@@ -81,6 +81,7 @@ function webinars(): array
             'host_org'    => 'EOHNS',
             'audience'    => 'Patients & Caregivers',
             'cme'         => false,
+            'endorsers'   => ['EOHNS'],
             'series_tag'  => 'Patient Awareness Webinar',
             'logo'        => 'assets/img/logo-patient.png', // "A New Era of Care" logo (patient only)
             'title'       => 'Hemophilia:',
@@ -123,6 +124,7 @@ function webinars(): array
             'host_org'    => 'EOHNS',
             'audience'    => 'Nurses',
             'cme'         => true,
+            'endorsers'   => ['ESH', 'EOHNS'],
             'series_tag'  => 'Hemophilia Awareness Series',
             'logo'        => 'assets/img/logo-series.png', // shared "Awareness Series" logo (nurses + physician)
             'title'       => 'Hemophilia',
@@ -165,6 +167,7 @@ function webinars(): array
             'host_org'    => 'ESH',
             'audience'    => 'Physician & HCPs',
             'cme'         => true,
+            'endorsers'   => ['ESH', 'EOHNS'],
             'series_tag'  => 'Hemophilia Awareness Series',
             'logo'        => 'assets/img/logo-series.png', // shared "Awareness Series" logo (nurses + physician)
             'title'       => 'Hemophilia',

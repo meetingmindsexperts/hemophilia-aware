@@ -12,7 +12,7 @@ $icons = [
 <section class="relative z-10 -mt-12 sm:-mt-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid gap-px overflow-hidden rounded-2xl bg-navy/10 ring-1 ring-navy/10 shadow-lg sm:grid-cols-2 lg:grid-cols-4">
-      <?php foreach (value_props($w['cme'] ?? true) as [$title, $body, $icon]): ?>
+      <?php foreach (value_props($w['cme'] ?? true, $w['endorsers'] ?? ['ESH', 'EOHNS']) as [$title, $body, $icon]): ?>
       <div class="flex items-start gap-3 bg-white p-5">
         <span class="grid place-items-center w-10 h-10 rounded-xl bg-royal/10 text-royal shrink-0" aria-hidden="true">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><?= $icons[$icon] ?? '' ?></svg>

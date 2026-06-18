@@ -10,13 +10,24 @@ $c = CONTACT;
     <!-- Endorsement / sponsorship -->
     <div class="grid gap-8 lg:grid-cols-3 items-start">
 
-      <!-- Endorsed by: ESH + EOHNS together -->
+      <!-- Endorsed by: per-webinar endorsers (both shown on the series index) -->
+      <?php
+        $endorsers = !empty($is_series) ? ['ESH', 'EOHNS'] : ($w['endorsers'] ?? ['ESH', 'EOHNS']);
+        $showEsh   = in_array('ESH', $endorsers, true);
+        $showEohns = in_array('EOHNS', $endorsers, true);
+      ?>
       <div class="flex flex-col items-center gap-3">
         <span class="text-[11px] tracking-[0.18em] uppercase text-ivory/50">Endorsed by</span>
         <div class="h-24 w-full rounded-xl bg-white ring-1 ring-ivory/15 px-6 flex items-center justify-center gap-6">
+          <?php if ($showEsh): ?>
           <?= logo_tag('assets/img/esh-logo.png', 'Emirates Society of Haematology', 'ESH', 'max-h-16 w-auto', 'font-extrabold text-navy text-xl') ?>
+          <?php endif; ?>
+          <?php if ($showEsh && $showEohns): ?>
           <span class="h-12 w-px bg-navy/10" aria-hidden="true"></span>
+          <?php endif; ?>
+          <?php if ($showEohns): ?>
           <?= logo_tag('assets/img/eohns.svg', 'Emirates Oncology & Hematology Nursing Society', 'EOHNS', 'max-h-16 w-auto', 'font-extrabold text-navy text-xl') ?>
+          <?php endif; ?>
         </div>
       </div>
 
