@@ -5,7 +5,7 @@ $c = CONTACT;
 ?>
 <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-20">
   <div class="rounded-3xl bg-white ring-1 ring-navy/10 shadow-sm overflow-hidden">
-    <div class="grid lg:grid-cols-[0.7fr_1.3fr]">
+    <div class="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr]">
 
       <!-- Intro -->
       <div class="bg-navy text-ivory p-8 sm:p-10 flex flex-col justify-center relative overflow-hidden">
@@ -24,7 +24,7 @@ $c = CONTACT;
 
       <!-- Contact methods -->
       <div class="p-8 sm:p-10">
-        <div class="grid sm:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
           <!-- Email -->
           <a href="mailto:<?= htmlspecialchars($c['email']) ?>?subject=<?= rawurlencode('Hemophilia Awareness Webinar, Assistance') ?>"
