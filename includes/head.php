@@ -121,9 +121,15 @@ $jsonLdOut = json_encode($jsonLd, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICOD
       body { background-color: #F7F3EA; }
 
       /* Hero banner: portrait artwork on phones, wide artwork on larger screens. */
-      .hero-banner { background-image: url('/assets/img/mob-banner.jpg'); }
+      .hero-banner {
+        background-image: url('/assets/img/mob-banner.jpg');
+        background-position: right top;   /* keep the wave element in the above-the-fold area on phones */
+      }
       @media (min-width: 640px) {
-        .hero-banner { background-image: url('/assets/img/hero-bg.jpg'); }
+        .hero-banner {
+          background-image: url('/assets/img/hero-bg.jpg');
+          background-position: center bottom;
+        }
       }
 
       /* Layered wave backdrop (CSS-only, echoes the brand ribbon motif). */
