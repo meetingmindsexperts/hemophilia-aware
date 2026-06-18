@@ -39,7 +39,7 @@ require __DIR__ . '/includes/head.php';
 </header>
 
 <!-- Title band -->
-<section class="relative overflow-hidden bg-ivory bg-cover bg-no-repeat bg-bottom" style="background-image:url('/assets/img/hero-bg.jpg')">
+<section class="relative overflow-hidden bg-ivory bg-cover bg-no-repeat bg-bottom hero-banner">
   <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-ivory via-ivory/80 to-ivory/30" aria-hidden="true"></div>
   <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-12 text-center">
     <div class="flex flex-wrap justify-center gap-2 mb-5">

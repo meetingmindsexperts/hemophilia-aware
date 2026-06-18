@@ -120,6 +120,12 @@ $jsonLdOut = json_encode($jsonLd, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICOD
       :root { color-scheme: light; }
       body { background-color: #F7F3EA; }
 
+      /* Hero banner: portrait artwork on phones, wide artwork on larger screens. */
+      .hero-banner { background-image: url('/assets/img/mob-banner.jpg'); }
+      @media (min-width: 640px) {
+        .hero-banner { background-image: url('/assets/img/hero-bg.jpg'); }
+      }
+
       /* Layered wave backdrop (CSS-only, echoes the brand ribbon motif). */
       .wave-band { position: absolute; inset-inline: 0; bottom: 0; line-height: 0; pointer-events: none; }
       .wave-band svg { width: 100%; height: auto; display: block; }
