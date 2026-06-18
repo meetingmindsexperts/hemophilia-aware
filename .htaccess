@@ -5,6 +5,9 @@ DirectoryIndex index.php
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Session register pages: /{slug}/register -> register.php?event={slug}
+  RewriteRule ^(patient|nurses|physician)/register/?$ register.php?event=$1 [L,QSA]
+
   # /index.php  ->  /            (canonical home)
   RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
   RewriteRule ^ / [R=301,L]

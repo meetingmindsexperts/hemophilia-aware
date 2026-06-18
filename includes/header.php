@@ -2,21 +2,21 @@
 /** header.php — sticky top navigation. Expects $w (current webinar). */
 declare(strict_types=1);
 $org = ORGS[$w['host_org']];
-$reg = register_url($w);
+$reg = register_link($w);
 $regHref  = $reg ?: '#register';
-$regAttrs = $reg ? ' target="_blank" rel="noopener"' : '';
+$regAttrs = '';
 ?>
 <a href="#register" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
   Skip to registration
 </a>
 
 <header class="sticky top-0 z-40 bg-ivory/85 backdrop-blur-md border-b border-navy/10">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between gap-4" aria-label="Primary">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-28 flex items-center justify-between gap-4" aria-label="Primary">
     <?php $hasCustomLogo = webinar_logo($w) !== null; ?>
     <a href="/" class="flex items-center gap-3 group min-w-0">
       <img src="<?= htmlspecialchars(webinar_logo_src($w)) ?>"
            alt="<?= htmlspecialchars(trim($w['title'] . ' ' . $w['title_accent'])) ?>"
-           class="w-[129px] h-auto object-contain shrink-0">
+           class="w-[150px] h-auto object-contain shrink-0">
       <?php if (!$hasCustomLogo): ?>
       <span class="leading-tight min-w-0">
         <span class="block text-navy font-extrabold text-sm sm:text-base truncate">Hemophilia Awareness</span>

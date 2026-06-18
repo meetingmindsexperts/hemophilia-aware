@@ -50,9 +50,9 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
         </dl>
 
         <!-- Dual CTAs -->
-        <?php $reg = register_url($w); $regHref = $reg ?: '#register'; $regAttrs = $reg ? ' target="_blank" rel="noopener"' : ''; ?>
+        <?php $reg = register_link($w); $regHref = $reg ?: '#register'; ?>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="<?= htmlspecialchars($regHref) ?>"<?= $regAttrs ?> class="inline-flex items-center gap-2 rounded-full bg-royal text-white font-bold px-7 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
+          <a href="<?= htmlspecialchars($regHref) ?>" class="inline-flex items-center gap-2 rounded-full bg-royal text-white font-bold px-7 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
             Register now
             <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
           </a>
@@ -71,12 +71,12 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
           </div>
 
           <div class="p-5 sm:p-6">
-            <!-- Registration is handled on BigMarker — this links out, it is not an embedded form. -->
-            <?php if ($bmUrl): ?>
-              <a href="<?= htmlspecialchars($bmUrl) ?>" target="_blank" rel="noopener"
+            <!-- Registration form lives on the dedicated /{slug}/register page (BigMarker widget). -->
+            <?php if ($reg): ?>
+              <a href="<?= htmlspecialchars($reg) ?>"
                  class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-royal text-white font-bold px-5 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
-                Register on BigMarker
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M14 5h5v5M19 5l-9 9M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>
+                Register now
+                <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
               </a>
             <?php else: ?>
               <button type="button" disabled
@@ -86,7 +86,7 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
             <?php endif; ?>
             <p class="mt-2.5 flex items-center justify-center gap-1.5 text-center text-xs text-charcoal/55">
               <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-              <?= $bmUrl ? 'Secure registration on BigMarker, opens in a new tab.' : 'Registration will open on BigMarker shortly.' ?>
+              <?= $reg ? 'Secure registration — powered by BigMarker.' : 'Registration opening soon.' ?>
             </p>
 
             <ul class="mt-5 space-y-2.5 text-sm text-charcoal/80">

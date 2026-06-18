@@ -25,7 +25,7 @@ declare(strict_types=1);
         <?php endforeach; ?>
       </div>
 
-      <?php $reg = register_url($w); $regHref = $reg ?: '#register'; $regAttrs = $reg ? ' target="_blank" rel="noopener"' : ''; ?>
+      <?php $reg = register_link($w); $regHref = $reg ?: '#register'; $regAttrs = ''; ?>
       <a href="<?= htmlspecialchars($regHref) ?>"<?= $regAttrs ?>
          class="mt-7 inline-flex items-center gap-2 rounded-full bg-gold text-navy font-bold px-8 py-4 shadow-lg hover:bg-gold-400 transition-colors min-h-[44px]">
         Register now

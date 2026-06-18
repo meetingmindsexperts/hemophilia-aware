@@ -12,6 +12,8 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/widgets.php';
+
 /** Per-organisation theming (logos are placeholders until official assets arrive). */
 const ORGS = [
     'EOHNS' => [
