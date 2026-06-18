@@ -70,6 +70,7 @@ jobs:
             .playwright-mcp/**
             .DS_Store
             **/.DS_Store
+            router.php
             README.md
             server.log
             page.html
