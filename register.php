@@ -59,12 +59,12 @@ require __DIR__ . '/includes/head.php';
 </section>
 
 <!-- Registration widget -->
-<section class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-10">
+<section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-10">
   <div class="rounded-2xl bg-white ring-1 ring-navy/10 shadow-xl p-5 sm:p-8">
     <h2 class="text-xl font-bold text-navy">Complete your registration</h2>
     <p class="mt-1 text-sm text-charcoal/60">Fill in your details below to reserve your seat. A joining link will be emailed to you.</p>
 
-    <div class="mt-6">
+    <div class="mt-6 -mx-1 overflow-x-auto">
       <?php if ($widget): ?>
         <?= $widget /* BigMarker register widget embed — trusted snippet, output as-is */ ?>
       <?php else: ?>
