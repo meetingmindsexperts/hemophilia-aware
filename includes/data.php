@@ -83,7 +83,7 @@ function webinars(): array
             'host_org'    => 'EOHNS',
             'audience'    => 'Patients & Caregivers',
             'cme'         => false,
-            'endorsers'   => ['EOHNS'],
+            'endorsers'   => ['ESH', 'EOHNS'],
             'series_tag'  => 'Patient Awareness Webinar',
             'logo'        => 'assets/img/logo-patient.png', // "A New Era of Care" logo (patient only)
             'title'       => 'Hemophilia:',
