@@ -25,7 +25,9 @@ require __DIR__ . '/head.php';
     require __DIR__ . '/components/valueprops.php';
     require __DIR__ . '/components/highlights.php';
     require __DIR__ . '/components/agenda.php';
-    require __DIR__ . '/components/faculty.php';
+    if (empty($w['hide_faculty'])) {
+        require __DIR__ . '/components/faculty.php';
+    }
     require __DIR__ . '/components/assistance.php';
     require __DIR__ . '/components/cta.php';
     require __DIR__ . '/footer.php';

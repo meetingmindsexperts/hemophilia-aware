@@ -28,7 +28,7 @@ $regAttrs = '';
     <div class="hidden md:flex items-center gap-6 text-sm font-medium text-navy/80">
       <a href="#about" class="hover:text-royal transition-colors">About</a>
       <a href="#agenda" class="hover:text-royal transition-colors">Agenda</a>
-      <a href="#faculty" class="hover:text-royal transition-colors">Faculty</a>
+      <?php if (empty($w['hide_faculty'])): ?><a href="#faculty" class="hover:text-royal transition-colors">Faculty</a><?php endif; ?>
       <a href="#contact" class="hover:text-royal transition-colors">Contact</a>
       <a href="/" class="hover:text-royal transition-colors">All Sessions</a>
     </div>

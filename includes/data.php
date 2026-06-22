@@ -187,6 +187,7 @@ function webinars(): array
             'banner'      => 'assets/img/banner-patient.jpg',
             'keyvisual'   => 'assets/img/keyvisual-patient.jpg',
             'agenda_pending' => true, // programme being finalised — show "being updated" notice
+            'hide_faculty'   => true, // faculty not yet confirmed — hide the section & nav link
             'bigmarker'   => [
                 'conference_url' => null,
             ],
