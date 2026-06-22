@@ -13,7 +13,7 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
       <div class="animate-fadeUp">
         <div class="flex flex-wrap items-center gap-2 mb-6">
           <span class="inline-flex items-center gap-1.5 rounded-full bg-navy text-ivory text-xs font-semibold px-3 py-1.5">
-            <?= htmlspecialchars($org['role']) ?> <?= htmlspecialchars($org['short']) ?>
+            Endorsed by <?= htmlspecialchars(implode(' & ', $w['endorsers'] ?? [$org['short']])) ?>
           </span>
           <?php if ($w['cme']): ?>
           <span class="inline-flex items-center gap-1.5 rounded-full bg-teal/15 text-teal ring-1 ring-teal/30 text-xs font-semibold px-3 py-1.5">
