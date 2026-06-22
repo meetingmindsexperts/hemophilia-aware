@@ -13,6 +13,16 @@ declare(strict_types=1);
       <p class="text-ivory/70 text-sm"><?= htmlspecialchars($w['time_range']) ?> · <?= htmlspecialchars($w['tz']) ?></p>
     </div>
 
+    <?php if (!empty($w['agenda_pending'])): ?>
+    <div class="rounded-2xl border border-ivory/15 bg-ivory/5 px-6 py-12 sm:py-16 text-center">
+      <span class="inline-flex items-center gap-2 rounded-full bg-gold/15 text-gold ring-1 ring-gold/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
+        Coming soon
+      </span>
+      <h3 class="mt-4 text-xl sm:text-2xl font-bold text-ivory">The agenda is currently being updated</h3>
+      <p class="mt-2 text-ivory/65 text-sm max-w-md mx-auto">The full programme for this session is being finalised. Please check back soon &mdash; or register to be notified once it&rsquo;s published.</p>
+    </div>
+    <?php else: ?>
     <ol class="relative border-l-2 border-ivory/15 ml-3 sm:ml-4 space-y-2">
       <?php foreach ($w['agenda'] as [$from, $to, $topic, $desc, $speakers]): ?>
       <li class="relative pl-8 sm:pl-10 py-4">
@@ -32,5 +42,6 @@ declare(strict_types=1);
       </li>
       <?php endforeach; ?>
     </ol>
+    <?php endif; ?>
   </div>
 </section>

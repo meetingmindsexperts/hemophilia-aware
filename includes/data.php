@@ -186,6 +186,7 @@ function webinars(): array
             'format'      => 'Virtual Webinar',
             'banner'      => 'assets/img/banner-patient.jpg',
             'keyvisual'   => 'assets/img/keyvisual-patient.jpg',
+            'agenda_pending' => true, // programme being finalised — show "being updated" notice
             'bigmarker'   => [
                 'conference_url' => null,
             ],
