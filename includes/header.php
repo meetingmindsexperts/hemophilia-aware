@@ -6,7 +6,7 @@ $join = join_link($w);
 $reg = register_link($w);
 $regHref  = $join ?: ($reg ?: '#register');
 $regAttrs = $join ? ' target="_blank" rel="noopener"' : '';
-$regText  = $join ? 'Join on Zoom' : 'Register';
+$regText  = $join ? 'Join Webinar' : 'Register';
 ?>
 <a href="#register" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
   Skip to registration

@@ -30,7 +30,7 @@ declare(strict_types=1);
         $reg = register_link($w);
         $ctaHref  = $join ?: ($reg ?: '#register');
         $ctaAttrs = $join ? ' target="_blank" rel="noopener"' : '';
-        $ctaLabel = $join ? 'Join on Zoom' : 'Register now';
+        $ctaLabel = $join ? 'Join Webinar' : 'Register now';
       ?>
       <a href="<?= htmlspecialchars($ctaHref) ?>"<?= $ctaAttrs ?>
          class="mt-7 inline-flex items-center gap-2 rounded-full bg-gold text-navy font-bold px-8 py-4 shadow-lg hover:bg-gold-400 transition-colors min-h-[44px]">

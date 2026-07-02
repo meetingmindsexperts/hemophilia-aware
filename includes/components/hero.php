@@ -56,7 +56,7 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
           $reg = register_link($w);
           $ctaHref  = $join ?: ($reg ?: '#register');
           $ctaAttrs = $join ? ' target="_blank" rel="noopener"' : '';
-          $ctaLabel = $join ? 'Join on Zoom' : 'Register now';
+          $ctaLabel = $join ? 'Join Webinar' : 'Register now';
         ?>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="<?= htmlspecialchars($ctaHref) ?>"<?= $ctaAttrs ?> class="inline-flex items-center gap-2 rounded-full bg-royal text-white font-bold px-7 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
@@ -82,7 +82,7 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
               <!-- No registration — attendees join the Zoom session directly. -->
               <a href="<?= htmlspecialchars($join) ?>" target="_blank" rel="noopener"
                  class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-royal text-white font-bold px-5 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
-                Join on Zoom
+                Join Webinar
                 <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
               </a>
               <p class="mt-2.5 flex items-center justify-center gap-1.5 text-center text-xs text-charcoal/55">
