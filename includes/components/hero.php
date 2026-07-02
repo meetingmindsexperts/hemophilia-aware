@@ -51,10 +51,16 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
         </dl>
 
         <!-- Dual CTAs -->
-        <?php $reg = register_link($w); $regHref = $reg ?: '#register'; ?>
+        <?php
+          $join = join_link($w);
+          $reg = register_link($w);
+          $ctaHref  = $join ?: ($reg ?: '#register');
+          $ctaAttrs = $join ? ' target="_blank" rel="noopener"' : '';
+          $ctaLabel = $join ? 'Join on Zoom' : 'Register now';
+        ?>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="<?= htmlspecialchars($regHref) ?>" class="inline-flex items-center gap-2 rounded-full bg-royal text-white font-bold px-7 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
-            Register now
+          <a href="<?= htmlspecialchars($ctaHref) ?>"<?= $ctaAttrs ?> class="inline-flex items-center gap-2 rounded-full bg-royal text-white font-bold px-7 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
+            <?= htmlspecialchars($ctaLabel) ?>
             <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
           </a>
           <a href="#agenda" class="inline-flex items-center gap-2 rounded-full bg-white text-navy font-bold px-7 py-3.5 ring-1 ring-navy/15 shadow-sm hover:ring-royal hover:text-royal transition-colors min-h-[44px]">
@@ -67,28 +73,44 @@ $bmUrl = $w['bigmarker']['conference_url'] ?? null;
       <div id="register" class="lg:sticky lg:top-24 animate-fadeUp scroll-mt-24">
         <div class="rounded-2xl bg-white shadow-xl ring-1 ring-navy/10 overflow-hidden">
           <div class="bg-navy px-6 py-5">
-            <h2 class="text-ivory font-bold text-xl">Reserve your seat</h2>
-            <p class="text-ivory/70 text-sm mt-1">Free · Live virtual · Registration on BigMarker</p>
+            <h2 class="text-ivory font-bold text-xl"><?= $join ? 'Join the live session' : 'Reserve your seat' ?></h2>
+            <p class="text-ivory/70 text-sm mt-1"><?= $join ? 'Free · Live virtual · Join on Zoom — no registration needed' : 'Free · Live virtual · Registration on BigMarker' ?></p>
           </div>
 
           <div class="p-5 sm:p-6">
-            <!-- Registration form lives on the dedicated /{slug}/register page (BigMarker widget). -->
-            <?php if ($reg): ?>
+            <?php if ($join): ?>
+              <!-- No registration — attendees join the Zoom session directly. -->
+              <a href="<?= htmlspecialchars($join) ?>" target="_blank" rel="noopener"
+                 class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-royal text-white font-bold px-5 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
+                Join on Zoom
+                <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
+              </a>
+              <p class="mt-2.5 flex items-center justify-center gap-1.5 text-center text-xs text-charcoal/55">
+                <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="12" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg>
+                Opens directly in Zoom — no registration required.
+              </p>
+              <p class="mt-1.5 text-center text-xs text-charcoal/55">
+                New to Zoom? <a href="https://zoom.us/download" target="_blank" rel="noopener" class="font-semibold text-royal hover:underline">Download the app</a> (optional) — or join from your browser.
+              </p>
+            <?php else: ?>
+              <!-- Registration form lives on the dedicated /{slug}/register page (BigMarker widget). -->
+              <?php if ($reg): ?>
               <a href="<?= htmlspecialchars($reg) ?>"
                  class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-royal text-white font-bold px-5 py-3.5 shadow-md hover:bg-navy transition-colors min-h-[44px]">
                 Register now
                 <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
               </a>
-            <?php else: ?>
+              <?php else: ?>
               <button type="button" disabled
                 class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-royal/40 text-white font-bold px-5 py-3.5 cursor-not-allowed min-h-[44px]">
                 Registration opening soon
               </button>
+              <?php endif; ?>
+              <p class="mt-2.5 flex items-center justify-center gap-1.5 text-center text-xs text-charcoal/55">
+                <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                <?= $reg ? 'Secure registration — powered by BigMarker.' : 'Registration opening soon.' ?>
+              </p>
             <?php endif; ?>
-            <p class="mt-2.5 flex items-center justify-center gap-1.5 text-center text-xs text-charcoal/55">
-              <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-              <?= $reg ? 'Secure registration — powered by BigMarker.' : 'Registration opening soon.' ?>
-            </p>
 
             <ul class="mt-5 space-y-2.5 text-sm text-charcoal/80">
               <?php

@@ -25,12 +25,21 @@ declare(strict_types=1);
         <?php endforeach; ?>
       </div>
 
-      <?php $reg = register_link($w); $regHref = $reg ?: '#register'; $regAttrs = ''; ?>
-      <a href="<?= htmlspecialchars($regHref) ?>"<?= $regAttrs ?>
+      <?php
+        $join = join_link($w);
+        $reg = register_link($w);
+        $ctaHref  = $join ?: ($reg ?: '#register');
+        $ctaAttrs = $join ? ' target="_blank" rel="noopener"' : '';
+        $ctaLabel = $join ? 'Join on Zoom' : 'Register now';
+      ?>
+      <a href="<?= htmlspecialchars($ctaHref) ?>"<?= $ctaAttrs ?>
          class="mt-7 inline-flex items-center gap-2 rounded-full bg-gold text-navy font-bold px-8 py-4 shadow-lg hover:bg-gold-400 transition-colors min-h-[44px]">
-        Register now
+        <?= htmlspecialchars($ctaLabel) ?>
         <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
       </a>
+      <?php if ($join): ?>
+      <p class="mt-3 text-ivory/70 text-xs">No registration needed · <a href="https://zoom.us/download" target="_blank" rel="noopener" class="font-semibold text-ivory hover:underline">Download Zoom</a> (optional) or join from your browser</p>
+      <?php endif; ?>
     </div>
   </div>
 </section>

@@ -37,3 +37,12 @@ function register_link(array $w): ?string
 {
     return register_widget($w) ? '/' . $w['slug'] . '/register' : null;
 }
+
+/**
+ * Direct live-join link (e.g. a Zoom URL). When set on a webinar it REPLACES
+ * registration: every CTA becomes "Join on Zoom" and links straight out.
+ */
+function join_link(array $w): ?string
+{
+    return !empty($w['join_url']) ? $w['join_url'] : null;
+}

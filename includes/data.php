@@ -100,6 +100,7 @@ function webinars(): array
             'format'      => 'Virtual Webinar',
             'banner'      => 'assets/img/banner-patient.jpg',
             'keyvisual'   => 'assets/img/keyvisual-patient.jpg',
+            'join_url'    => 'https://us06web.zoom.us/j/84558462912', // live on Zoom — replaces registration
             'bigmarker'   => [
                 'conference_url' => 'https://www.bigmarker.com/medulive/hemophilia-a-new-era-of-care?show_live_page=true',
             ],

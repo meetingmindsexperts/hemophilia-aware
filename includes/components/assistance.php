@@ -72,8 +72,13 @@ $c = CONTACT;
             </span>
             <div class="min-w-0">
               <p class="text-xs font-semibold uppercase tracking-wide text-charcoal/50">Joining the webinar</p>
+              <?php if (join_link($w)): ?>
+              <p class="font-bold text-navy">Join directly on Zoom</p>
+              <p class="text-xs text-charcoal/60 mt-0.5">No registration needed — <a href="https://zoom.us/download" target="_blank" rel="noopener" class="font-semibold text-royal hover:underline">download Zoom</a> (optional) or join from your browser</p>
+              <?php else: ?>
               <p class="font-bold text-navy">Link sent before the session</p>
               <p class="text-xs text-charcoal/60 mt-0.5">Registered attendees receive the BigMarker link by email</p>
+              <?php endif; ?>
             </div>
           </div>
 

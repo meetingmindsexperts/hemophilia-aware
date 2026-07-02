@@ -95,7 +95,7 @@ $cardLink = ['patient' => '/patient', 'nurses' => '/nurses', 'physician' => '/ph
         </dl>
 
         <span class="mt-6 inline-flex items-center gap-2 font-bold text-royal group-hover:gap-3 transition-all">
-          View &amp; register
+          <?= join_link($item) ? 'View &amp; join' : 'View &amp; register' ?>
           <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
         </span>
       </div>

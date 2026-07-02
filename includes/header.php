@@ -2,9 +2,11 @@
 /** header.php — sticky top navigation. Expects $w (current webinar). */
 declare(strict_types=1);
 $org = ORGS[$w['host_org']];
+$join = join_link($w);
 $reg = register_link($w);
-$regHref  = $reg ?: '#register';
-$regAttrs = '';
+$regHref  = $join ?: ($reg ?: '#register');
+$regAttrs = $join ? ' target="_blank" rel="noopener"' : '';
+$regText  = $join ? 'Join on Zoom' : 'Register';
 ?>
 <a href="#register" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
   Skip to registration
@@ -35,7 +37,7 @@ $regAttrs = '';
 
     <a href="<?= htmlspecialchars($regHref) ?>"<?= $regAttrs ?>
        class="inline-flex items-center gap-2 rounded-full bg-royal text-white text-sm font-semibold px-5 py-2.5 shadow-sm hover:bg-navy transition-colors min-h-[44px]">
-      Register
+      <?= htmlspecialchars($regText) ?>
       <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h8.69L9.22 6.03a.75.75 0 1 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"/></svg>
     </a>
   </nav>
