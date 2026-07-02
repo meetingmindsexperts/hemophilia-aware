@@ -10,7 +10,7 @@ Awareness Webinar Series. Sponsored by Sanofi, endorsed by ESH & EOHNS, CME accr
 | `index.php` | Series overview (links to all three) | — | — |
 | `patient.php` | Patient — *Hemophilia: A New Era of Care* | 19 Jun 2026 | EOHNS |
 | `nurses.php` | Nurses — *Awareness Series, Wave 1* | 20 Jun 2026 | EOHNS |
-| `physician.php` | Physician — *Awareness Series, Wave 2* | 2 Jul 2026 | ESH |
+| `physician.php` | Physician — *Awareness Series, Wave 2* | 10 Jul 2026 | ESH |
 
 ## Run locally
 
